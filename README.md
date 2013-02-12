@@ -15,6 +15,9 @@ Requirements
 
    Download: http://www.scala-lang.org/downloads
 
+   - http://www.scala-lang.org/downloads/distrib/files/scala-docs-2.10.0.zip
+   - http://www.scala-lang.org/downloads/distrib/files/scala-docs-2.9.2.zip
+
 Usage
 -----
 
@@ -26,3 +29,10 @@ Usage
 6. unzip `scala-docs-2.10.0.zip` to `./docs/scala-docs-2.10.0`
 7. `> sbt assembly`
 8. `> compile scala-docs-2.10.0`
+
+
+CHM files (download)
+--------------------
+
+- scala-docs-2.10.0.chm: http://dl.dropbox.com/u/63505087/ScaladocCHM/scala-docs-2.10.0_20130212.chm.zip
+- scala-docs-2.9.2.chm: http://dl.dropbox.com/u/63505087/ScaladocCHM/scala-docs-2.9.2_20130212.chm.zip
