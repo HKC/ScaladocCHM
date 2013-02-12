@@ -124,9 +124,12 @@ object CompileScala {
             targetDir.mkdirs
 
             if (file.toString.contains(".html") && !file.toString.contains(apiVersion + "\\" + indexPage)) {
+
               val htmlFile = Resource.fromFile(targetDir.getCanonicalPath + "/" + file.getName)
+              val html = pattern.matcher(Resource.fromFile(file).string).replaceAll("")
+
               htmlFile.truncate(0)
-              htmlFile.write(pattern.matcher(Resource.fromFile(file).string).replaceAll(""))
+              htmlFile.write(html.replaceAll("<title>.+?\\s([a-zA-Z.]+)</title>", "<title>$1</title>"))
             } else {
               Resource.fromFile(file) copyDataTo
                 Resource.fromFile(targetDir.getCanonicalPath + "/" + file.getName)
@@ -171,7 +174,6 @@ object CompileScala {
      */
     def makeHhk {
 
-      //import scala.xml._
       import scala.xml.pull._
       import scala.io._
 
