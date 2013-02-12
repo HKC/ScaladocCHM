@@ -11,7 +11,7 @@ object CompileScala {
     val apiVersion = args(0)
 
     val apiRoot = "docs"
-    val indexPage = "package.html"
+    val indexPage = "index.html"
 
     val hhpFile = apiVersion + ".hhp"
     val tocFile = apiVersion + ".hhc"
@@ -52,12 +52,12 @@ object CompileScala {
           var pageImage = 11
 
           if (title.contains("$")) {
-            pageImage = 10
+            pageImage = 12
           }
 
           title = title
-            .replace("$$", ".")
-            .replace("$", "")
+            .replaceAll("\\$\\$?", ".")
+            .replaceAll("\\.$", "")
 
           val local = file.toURI.toString
             .replaceAll("^.*" + getCurrentDirectoryName + "/", "")
@@ -67,7 +67,7 @@ object CompileScala {
             html += "<LI>" +
               "<OBJECT type=\"text/sitemap\">\n" +
               "<param name=\"Name\" value=\"" + title + "\">\n" +
-              "<param name=\"Local\" value=\"" + local + indexPage + "\">\n" +
+              "<param name=\"Local\" value=\"" + local + "package.html\">\n" +
               "</OBJECT>" +
               "</LI>\n" +
               "<UL>\n" + list(file) + "</UL>\n"
@@ -106,7 +106,7 @@ object CompileScala {
 
       def list(path: File): String = {
         var txt = ""
-        val pattern = Pattern.compile( """<\?xml.+?\?>|<script type="text/javascript">.*</script>""", Pattern.DOTALL)
+        val pattern = Pattern.compile( """<\?xml.+?\?>|<script type="text/javascript">.*</script>|sh_highlightDocument\([^)]+\);""", Pattern.DOTALL)
 
         implicit val codec = Codec("UTF-8")
         codec.onMalformedInput(CodingErrorAction.REPLACE)
