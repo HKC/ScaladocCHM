@@ -17,6 +17,7 @@ Requirements
 
    - http://www.scala-lang.org/downloads/distrib/files/scala-docs-2.10.0.zip
    - http://www.scala-lang.org/downloads/distrib/files/scala-docs-2.9.2.zip
+   - http://www.scala-lang.org/downloads/distrib/files/scala-docs-2.9.3.zip
 
 Usage
 -----
@@ -36,3 +37,4 @@ CHM files (download)
 
 - scala-docs-2.10.0.chm: http://dl.dropbox.com/u/63505087/ScaladocCHM/scala-docs-2.10.0_20130212.chm.zip
 - scala-docs-2.9.2.chm: http://dl.dropbox.com/u/63505087/ScaladocCHM/scala-docs-2.9.2_20130212.chm.zip
+- scala-docs-2.9.3.chm: http://dl.dropbox.com/u/63505087/ScaladocCHM/scala-docs-2.9.3_20130306.chm.zip
